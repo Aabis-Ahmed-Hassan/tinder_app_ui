@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:tinder_app_ui/components/logo_image_widget.dart';
-import 'package:tinder_app_ui/components/my_app_bar.dart';
-import 'package:tinder_app_ui/constants/app_colors.dart';
-import 'package:tinder_app_ui/constants/app_padding.dart';
+import 'package:tinder_app_ui/components/my_button.dart';
 import 'package:tinder_app_ui/constants/app_texts.dart';
-import 'package:tinder_app_ui/constants/icon_size.dart';
+import 'package:tinder_app_ui/screens/otp_verification.dart';
+
+import '../components/my_app_bar.dart';
+import '../constants/app_colors.dart';
+import '../constants/app_padding.dart';
+import '../constants/icon_size.dart';
 
 class EnterPhoneNumber extends StatelessWidget {
   const EnterPhoneNumber({super.key});
@@ -16,38 +18,148 @@ class EnterPhoneNumber extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(
         showLeading: true,
-        showTitle: true,
         leadingIcon: const Icon(
           Icons.keyboard_arrow_left,
           color: AppColors.appBarLeadingIconColor,
           size: IconSizes.appBarIconSize,
         ),
-        title: const LogoImageWidget(),
         showActions: false,
+        showTitle: false,
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: width * AppPadding.myPadding),
-        child: Center(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding:
+              EdgeInsets.symmetric(horizontal: width * AppPadding.myPadding),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: height * 0.04,
-              ),
-              Text(
-                'Oops',
-                style: AppTexts.myHeadingTextStyle3,
+              const Text(
+                'My number is',
+                style: AppTexts.myHeadingTextStyle1,
               ),
               SizedBox(
-                height: height * 0.035,
+                height: height * 0.01,
               ),
-              Text(
-                'We couldn’t find a Tinder account connected to that Facebook Account.',
-                textAlign: TextAlign.center,
-                style: AppTexts.myParagraphTextStyle1,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: EdgeInsets.zero,
+                    margin: EdgeInsets.zero,
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: Color(0xff828693),
+                          width: 1.5,
+                        ),
+                      ),
+                    ),
+                    child: const DropdownMenu(
+                      trailingIcon: Icon(
+                        Icons.arrow_drop_down,
+                        color: Color(0xff444142),
+                        size: 28,
+                      ),
+                      initialSelection: 'KR +82',
+                      textStyle: TextStyle(
+                        color: Color(0xff444142),
+                        fontSize: 19.48,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                      ),
+                      dropdownMenuEntries: [
+                        DropdownMenuEntry(
+                          value: 'KR +82',
+                          label: 'KR +82',
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: width * 0.035,
+                  ),
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.zero,
+                      margin: EdgeInsets.zero,
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: Color(0xff828693),
+                            width: 1.5,
+                          ),
+                        ),
+                      ),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          contentPadding: EdgeInsets.zero,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                          ),
+                          hintText: '000000000',
+                          hintStyle: TextStyle(
+                            color: Color(0xff444142),
+                            fontSize: 19.48,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
               SizedBox(
-                height: height * 0.05,
+                height: height * 0.07,
+              ),
+              RichText(
+                text: const TextSpan(
+                  children: [
+                    TextSpan(
+                      text:
+                          'We will send a text with a verification code. Message and data rates may apply. ',
+                      style: TextStyle(
+                        fontSize: 13.59,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Inter',
+                        color: Color(
+                          0xff828693,
+                        ),
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Learn what happens when your number changes.',
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        decorationColor: Color(
+                          0xffA1A0A0,
+                        ),
+                        fontSize: 13.59,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Inter',
+                        color: Color(
+                          0xff444142,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: height * 0.14,
+              ),
+              MyButton(
+                title: 'Continue',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => OTP_Verification(),
+                    ),
+                  );
+                },
+                widthInMediaQuery: 1,
               ),
             ],
           ),

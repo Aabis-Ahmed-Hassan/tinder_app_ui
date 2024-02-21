@@ -1,3 +1,3 @@
 class AppPadding {
-  static const myPadding = 0.05;
+  static const myPadding = 0.075;
 }

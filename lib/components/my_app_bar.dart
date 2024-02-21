@@ -24,7 +24,14 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: showLeading ? leadingIcon : Container(),
+      leading: showLeading
+          ? InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: leadingIcon,
+            )
+          : Container(),
       title: showTitle ? title : Container(),
       centerTitle: true,
       actions: showActions ? actions : [],
