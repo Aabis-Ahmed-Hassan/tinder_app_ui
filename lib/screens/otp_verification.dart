@@ -31,7 +31,7 @@ class OTP_Verification extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'My number is',
+                'My code is',
                 style: AppTexts.myHeadingTextStyle1,
               ),
               SizedBox(

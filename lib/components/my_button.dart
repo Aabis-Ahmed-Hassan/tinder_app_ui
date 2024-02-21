@@ -28,8 +28,8 @@ class MyButton extends StatelessWidget {
             ],
             gradient: LinearGradient(
               colors: [
-                AppColors.gradientColorTwo,
-                AppColors.gradientColorOne,
+                AppColors.defaultColorRed,
+                AppColors.defaultColorOrange,
               ],
             ),
           ),

@@ -6,6 +6,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Icon? leadingIcon;
   bool showTitle;
 
+  bool centerTitle;
   Widget? title;
   bool showActions;
   List<Widget>? actions;
@@ -17,6 +18,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     required this.showActions,
     this.actions,
+    this.centerTitle = true,
   });
 
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -31,10 +33,11 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
               },
               child: leadingIcon,
             )
-          : Container(),
-      title: showTitle ? title : Container(),
-      centerTitle: true,
-      actions: showActions ? actions : [],
+          : null,
+      automaticallyImplyLeading: false,
+      title: showTitle ? title : null,
+      centerTitle: centerTitle,
+      actions: showActions ? actions : null,
     );
   }
 }

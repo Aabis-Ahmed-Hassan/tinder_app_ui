@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tinder_app_ui/components/my_button.dart';
 import 'package:tinder_app_ui/constants/app_texts.dart';
-import 'package:tinder_app_ui/screens/otp_verification.dart';
+import 'package:tinder_app_ui/screens/enter_name.dart';
 
 import '../components/my_app_bar.dart';
 import '../constants/app_colors.dart';
@@ -92,6 +92,12 @@ class EnterPhoneNumber extends StatelessWidget {
                         ),
                       ),
                       child: TextFormField(
+                        style: TextStyle(
+                          color: Color(0xff444142),
+                          fontSize: 19.48,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w400,
+                        ),
                         decoration: const InputDecoration(
                           contentPadding: EdgeInsets.zero,
                           border: OutlineInputBorder(
@@ -155,7 +161,7 @@ class EnterPhoneNumber extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => OTP_Verification(),
+                      builder: (context) => Enter_Name(),
                     ),
                   );
                 },

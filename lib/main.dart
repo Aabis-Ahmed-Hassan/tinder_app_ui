@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tinder_app_ui/screens/enter_name.dart';
 import 'package:tinder_app_ui/screens/enter_phone_number.dart';
 import 'package:tinder_app_ui/screens/oops_screen.dart';
 import 'package:tinder_app_ui/screens/otp_verification.dart';
@@ -49,6 +50,12 @@ class MyApp2 extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OTP_Verification()));
+              }),
+          MyScreen(
+              title: 'My Name Is Screen',
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Enter_Name()));
               }),
         ],
       ),

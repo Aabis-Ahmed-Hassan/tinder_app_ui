@@ -11,8 +11,8 @@ class LogoImageWidget extends StatelessWidget {
       shaderCallback: (Rect bounds) {
         return LinearGradient(
           colors: [
-            AppColors.gradientColorTwo,
-            AppColors.gradientColorOne
+            AppColors.defaultColorRed,
+            AppColors.defaultColorOrange
           ], // Gradient colors
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,

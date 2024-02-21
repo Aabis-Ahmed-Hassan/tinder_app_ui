@@ -6,6 +6,7 @@ import 'package:tinder_app_ui/constants/app_colors.dart';
 import 'package:tinder_app_ui/constants/app_padding.dart';
 import 'package:tinder_app_ui/constants/app_texts.dart';
 import 'package:tinder_app_ui/constants/icon_size.dart';
+import 'package:tinder_app_ui/screens/enter_phone_number.dart';
 
 class OOPS_Screen extends StatelessWidget {
   const OOPS_Screen({super.key});
@@ -52,7 +53,14 @@ class OOPS_Screen extends StatelessWidget {
                 SizedBox(
                   height: height * 0.225,
                 ),
-                MyButton(title: 'Create Your Account', onTap: () {}),
+                MyButton(
+                    title: 'Create Your Account',
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EnterPhoneNumber()));
+                    }),
               ],
             ),
           ),
