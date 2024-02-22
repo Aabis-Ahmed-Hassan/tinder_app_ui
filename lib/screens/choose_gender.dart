@@ -3,6 +3,7 @@ import 'package:tinder_app_ui/components/my_button.dart';
 import 'package:tinder_app_ui/constants/app_bar_slider_value.dart';
 import 'package:tinder_app_ui/constants/app_colors.dart';
 import 'package:tinder_app_ui/constants/app_texts.dart';
+import 'package:tinder_app_ui/screens/choose_interests.dart';
 
 import '../components/my_app_bar.dart';
 import '../constants/app_padding.dart';
@@ -184,8 +185,12 @@ class _Choose_GenderState extends State<Choose_Gender> {
               MyButton(
                 title: 'Continue',
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Choose_Gender()));
+                  if (userGender == 'Male' || userGender == 'Female') {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ChooseInterests()));
+                  }
                 },
                 widthInMediaQuery: 1,
                 showGradient: userGender == 'Male' || userGender == 'Female'

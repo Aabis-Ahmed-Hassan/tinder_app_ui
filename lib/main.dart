@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tinder_app_ui/screens/add_photos.dart';
 import 'package:tinder_app_ui/screens/choose_gender.dart';
+import 'package:tinder_app_ui/screens/choose_interests.dart';
 import 'package:tinder_app_ui/screens/enter_birthday.dart';
 import 'package:tinder_app_ui/screens/enter_name.dart';
 import 'package:tinder_app_ui/screens/enter_phone_number.dart';
@@ -70,6 +72,18 @@ class MyApp2 extends StatelessWidget {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Choose_Gender()));
+              }),
+          MyScreen(
+              title: 'Choose Interest',
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ChooseInterests()));
+              }),
+          MyScreen(
+              title: 'Add Photos',
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Add_Photos()));
               }),
         ],
       ),
