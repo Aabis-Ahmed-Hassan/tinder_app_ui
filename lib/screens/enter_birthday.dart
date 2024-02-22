@@ -3,13 +3,13 @@ import 'package:tinder_app_ui/components/my_button.dart';
 import 'package:tinder_app_ui/constants/app_bar_slider_value.dart';
 import 'package:tinder_app_ui/constants/app_colors.dart';
 import 'package:tinder_app_ui/constants/app_texts.dart';
-import 'package:tinder_app_ui/screens/enter_birthday.dart';
+import 'package:tinder_app_ui/screens/choose_gender.dart';
 
 import '../components/my_app_bar.dart';
 import '../constants/app_padding.dart';
 
-class Enter_Name extends StatelessWidget {
-  const Enter_Name({super.key});
+class Enter_Birthday extends StatelessWidget {
+  const Enter_Birthday({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class Enter_Name extends StatelessWidget {
                 activeColor: AppColors.defaultColorRed,
                 inactiveColor: Color(0xffD9D9D9),
                 thumbColor: Colors.transparent,
-                value: AppBarSliderValue.sliderValue * 1,
+                value: AppBarSliderValue.sliderValue * 2,
                 onChanged: (value) {},
               ),
             ),
@@ -41,10 +41,7 @@ class Enter_Name extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pop(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Enter_Birthday()));
+                    Navigator.pop(context);
                   },
                   child: Align(
                     alignment: Alignment.bottomLeft,
@@ -53,11 +50,11 @@ class Enter_Name extends StatelessWidget {
                     child: Image(
                       height: height * 0.0225,
                       image: AssetImage(
-                        'assets/icons/close_icon.png',
+                        'assets/icons/go_back_icon.png',
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ],
@@ -78,76 +75,91 @@ class Enter_Name extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'My first\nname is',
+                      'My\nbirthday is',
                       style: AppTexts.myHeadingTextStyle1,
                       textAlign: TextAlign.start,
                     ),
                     SizedBox(
-                      height: height * 0.01,
+                      height: height * 0.014,
                     ),
-                    Container(
-                      padding: EdgeInsets.zero,
-                      margin: EdgeInsets.zero,
-                      decoration: const BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                            color: Color(0xff828693),
-                            width: 1.5,
-                          ),
-                        ),
-                      ),
-                      child: TextFormField(
-                        style: TextStyle(
-                          color: Color(0xff444142),
-                          fontSize: 19.48,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w400,
-                        ),
-                        decoration: const InputDecoration(
-                          contentPadding: EdgeInsets.zero,
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                          ),
-                          hintText: '000000000',
-                          hintStyle: TextStyle(
-                            color: Color(0xff444142),
-                            fontSize: 19.48,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w400,
-                          ),
+                    Row(
+                      children: List.generate(
+                        1,
+                        (index) => Expanded(
+                          child: MyBirthdayDay(),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: height * 0.06,
+                      height: height * 0.015,
                     ),
                     Text(
-                      'This is how it will appear in Tinder and you will not be able to change it',
+                      'Your age will be public',
                       style: TextStyle(
                         color: Color(0xff828693),
                         fontWeight: FontWeight.w500,
                         fontFamily: 'Inter',
                         fontSize: 13.19,
                       ),
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.start,
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                height: height * 0.07,
+                height: height * 0.05,
               ),
               MyButton(
                 title: 'Continue',
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Enter_Birthday()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Choose_Gender()));
                 },
                 widthInMediaQuery: 1,
+                showGradient: false,
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MyBirthdayDay extends StatelessWidget {
+  const MyBirthdayDay({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.zero,
+      margin: EdgeInsets.zero,
+      decoration: const BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: Color(0xff828693),
+            width: 1.5,
+          ),
+        ),
+      ),
+      child: TextFormField(
+        style: TextStyle(
+          color: Color(0xff444142),
+          fontSize: 19.48,
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w400,
+        ),
+        decoration: const InputDecoration(
+          contentPadding: EdgeInsets.zero,
+          border: OutlineInputBorder(
+            borderSide: BorderSide.none,
+          ),
+          hintText: '000000000',
+          hintStyle: TextStyle(
+            color: Color(0xff444142),
+            fontSize: 19.48,
+            fontFamily: 'Inter',
+            fontWeight: FontWeight.w400,
           ),
         ),
       ),

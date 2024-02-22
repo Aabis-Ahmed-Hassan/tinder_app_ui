@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tinder_app_ui/screens/choose_gender.dart';
+import 'package:tinder_app_ui/screens/enter_birthday.dart';
 import 'package:tinder_app_ui/screens/enter_name.dart';
 import 'package:tinder_app_ui/screens/enter_phone_number.dart';
 import 'package:tinder_app_ui/screens/oops_screen.dart';
@@ -52,10 +54,22 @@ class MyApp2 extends StatelessWidget {
                         builder: (context) => OTP_Verification()));
               }),
           MyScreen(
-              title: 'My Name Is Screen',
+              title: 'Name',
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Enter_Name()));
+              }),
+          MyScreen(
+              title: 'birthday',
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Enter_Birthday()));
+              }),
+          MyScreen(
+              title: 'Choose Gender',
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Choose_Gender()));
               }),
         ],
       ),

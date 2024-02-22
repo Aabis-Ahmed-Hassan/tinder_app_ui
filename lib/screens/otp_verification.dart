@@ -63,6 +63,7 @@ class OTP_Verification extends StatelessWidget {
                 title: 'Continue',
                 onTap: () {},
                 widthInMediaQuery: 1,
+                showGradient: false,
               ),
             ],
           ),

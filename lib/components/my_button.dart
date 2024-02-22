@@ -4,12 +4,14 @@ import 'package:tinder_app_ui/constants/app_colors.dart';
 class MyButton extends StatelessWidget {
   String title;
   var onTap;
+  bool showGradient;
   double widthInMediaQuery;
   MyButton(
       {super.key,
       required this.title,
       required this.onTap,
-      this.widthInMediaQuery = 0.7});
+      this.widthInMediaQuery = 0.7,
+      this.showGradient = true});
 
   @override
   Widget build(BuildContext context) {
@@ -26,18 +28,21 @@ class MyButton extends StatelessWidget {
               BoxShadow(
                   color: Color(0xffE6E6E6), blurRadius: 10, spreadRadius: 5)
             ],
-            gradient: LinearGradient(
-              colors: [
-                AppColors.defaultColorRed,
-                AppColors.defaultColorOrange,
-              ],
-            ),
+            gradient: showGradient
+                ? LinearGradient(
+                    colors: [
+                      AppColors.defaultColorRed,
+                      AppColors.defaultColorOrange,
+                    ],
+                  )
+                : null,
+            color: showGradient ? null : Color(0xffEBECEF),
           ),
           child: Center(
             child: Text(
               title,
               style: TextStyle(
-                color: Color(0xffFFFFFF),
+                color: showGradient ? Color(0xffFFFFFF) : Color(0xff828491),
                 fontFamily: 'Inter',
                 fontSize: 18.14,
                 fontWeight: FontWeight.w700,
