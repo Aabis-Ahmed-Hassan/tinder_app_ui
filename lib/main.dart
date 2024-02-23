@@ -7,6 +7,7 @@ import 'package:tinder_app_ui/screens/enter_name.dart';
 import 'package:tinder_app_ui/screens/enter_phone_number.dart';
 import 'package:tinder_app_ui/screens/oops_screen.dart';
 import 'package:tinder_app_ui/screens/otp_verification.dart';
+import 'package:tinder_app_ui/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +34,12 @@ class MyApp2 extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          MyScreen(
+              title: 'Splash Screen',
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Splash_Screen()));
+              }),
           MyScreen(
               title: 'OOPs Screen',
               onTap: () {

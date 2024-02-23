@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tinder_app_ui/screens/welcome_to_tinder.dart';
 
 import '../components/my_app_bar.dart';
 import '../components/my_button.dart';
@@ -110,14 +111,13 @@ class _Add_PhotosState extends State<Add_Photos> {
                     imageIsSelected: true,
                   ),
                 ),
-                // SizedBox(width: width * 0.03),
                 Expanded(
                   child: MyImage(
                     onTap: () {},
-                    imageAddress: '',
+                    imageAddress: 'assets/images/random_image_2.jpg',
+                    imageIsSelected: true,
                   ),
                 ),
-                // SizedBox(width: width * 0.03),
                 Expanded(
                   child: MyImage(
                     onTap: () {},
@@ -157,9 +157,13 @@ class _Add_PhotosState extends State<Add_Photos> {
             const Spacer(),
             MyButton(
               title: 'Continue',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Welcome_To_Tinder()));
+              },
               widthInMediaQuery: 1,
-              showGradient: false,
             ),
             SizedBox(
               height: height * 0.06,

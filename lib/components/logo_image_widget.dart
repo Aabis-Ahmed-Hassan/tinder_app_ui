@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tinder_app_ui/constants/app_colors.dart';
+import 'package:tinder_app_ui/constants/app_icon.dart';
 
 class LogoImageWidget extends StatelessWidget {
   const LogoImageWidget({super.key});
@@ -19,7 +20,7 @@ class LogoImageWidget extends StatelessWidget {
         ).createShader(bounds);
       },
       child: Icon(
-        Icons.favorite,
+        AppIcon.appIcon,
         size: 34,
         color: Colors.white, // Color of the icon
       ),

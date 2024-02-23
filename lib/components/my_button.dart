@@ -5,13 +5,15 @@ class MyButton extends StatelessWidget {
   String title;
   var onTap;
   bool showGradient;
+  bool showBoxShadow;
   double widthInMediaQuery;
   MyButton(
       {super.key,
       required this.title,
       required this.onTap,
       this.widthInMediaQuery = 0.7,
-      this.showGradient = true});
+      this.showGradient = true,
+      this.showBoxShadow = true});
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +26,14 @@ class MyButton extends StatelessWidget {
           width: width * widthInMediaQuery,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            boxShadow: [
-              BoxShadow(
-                  color: Color(0xffE6E6E6), blurRadius: 10, spreadRadius: 5)
-            ],
+            boxShadow: showBoxShadow
+                ? [
+                    BoxShadow(
+                        color: Color(0xffE6E6E6),
+                        blurRadius: 10,
+                        spreadRadius: 5)
+                  ]
+                : null,
             gradient: showGradient
                 ? LinearGradient(
                     colors: [

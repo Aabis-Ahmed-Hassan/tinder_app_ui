@@ -4,9 +4,7 @@ import 'package:tinder_app_ui/constants/app_texts.dart';
 import 'package:tinder_app_ui/screens/enter_name.dart';
 
 import '../components/my_app_bar.dart';
-import '../constants/app_colors.dart';
 import '../constants/app_padding.dart';
-import '../constants/icon_size.dart';
 
 class EnterPhoneNumber extends StatelessWidget {
   const EnterPhoneNumber({super.key});
@@ -17,14 +15,21 @@ class EnterPhoneNumber extends StatelessWidget {
     var width = MediaQuery.of(context).size.width * 1;
     return Scaffold(
       appBar: MyAppBar(
-        showLeading: true,
-        leadingIcon: const Icon(
-          Icons.keyboard_arrow_left,
-          color: AppColors.appBarLeadingIconColor,
-          size: IconSizes.appBarIconSize,
-        ),
+        showLeading: false,
         showActions: false,
-        showTitle: false,
+        showTitle: true,
+        title: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Image(
+            height: height * 0.0225,
+            image: const AssetImage(
+              'assets/icons/go_back_icon.png',
+            ),
+          ),
+        ),
+        centerTitle: false,
       ),
       body: SingleChildScrollView(
         child: Padding(
