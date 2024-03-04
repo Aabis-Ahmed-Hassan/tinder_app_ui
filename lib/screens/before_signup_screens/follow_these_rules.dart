@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:tinder_app_ui/components/logo_image_widget.dart';
 
-import '../components/my_app_bar.dart';
-import '../components/my_button.dart';
-import '../constants/app_padding.dart';
-import 'lets_get_you_ready.dart';
+import '../../components/my_app_bar.dart';
+import '../../components/my_button.dart';
+import '../../constants/app_padding.dart';
+import '../after_signup_screens/welcome_to_tinder.dart';
 
-class Welcome_To_Tinder extends StatelessWidget {
-  const Welcome_To_Tinder({super.key});
+class FollowTheseRules extends StatelessWidget {
+  const FollowTheseRules({super.key});
 
   @override
   Widget build(BuildContext context) {

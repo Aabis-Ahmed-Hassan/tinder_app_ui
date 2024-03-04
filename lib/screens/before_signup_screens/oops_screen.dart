@@ -4,7 +4,7 @@ import 'package:tinder_app_ui/components/my_app_bar.dart';
 import 'package:tinder_app_ui/components/my_button.dart';
 import 'package:tinder_app_ui/constants/app_padding.dart';
 import 'package:tinder_app_ui/constants/app_texts.dart';
-import 'package:tinder_app_ui/screens/enter_phone_number.dart';
+import 'package:tinder_app_ui/screens/before_signup_screens/enter_phone_number.dart';
 
 class OOPS_Screen extends StatelessWidget {
   const OOPS_Screen({super.key});

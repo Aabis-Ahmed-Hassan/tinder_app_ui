@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tinder_app_ui/components/my_button.dart';
 import 'package:tinder_app_ui/constants/app_texts.dart';
-import 'package:tinder_app_ui/screens/enter_name.dart';
+import 'package:tinder_app_ui/screens/before_signup_screens/enter_name.dart';
 
-import '../components/my_app_bar.dart';
-import '../constants/app_padding.dart';
+import '../../components/my_app_bar.dart';
+import '../../constants/app_padding.dart';
 
 class EnterPhoneNumber extends StatelessWidget {
   const EnterPhoneNumber({super.key});

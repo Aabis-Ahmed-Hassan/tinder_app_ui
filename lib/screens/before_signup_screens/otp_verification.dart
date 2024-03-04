@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:tinder_app_ui/components/my_button.dart';
 import 'package:tinder_app_ui/constants/app_texts.dart';
 
-import '../components/my_app_bar.dart';
-import '../constants/app_colors.dart';
-import '../constants/app_padding.dart';
-import '../constants/icon_size.dart';
+import '../../components/my_app_bar.dart';
+import '../../constants/app_colors.dart';
+import '../../constants/app_padding.dart';
+import '../../constants/icon_size.dart';
 
 class OTP_Verification extends StatelessWidget {
   const OTP_Verification({super.key});

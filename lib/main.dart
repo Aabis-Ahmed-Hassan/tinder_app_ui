@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:tinder_app_ui/screens/add_photos.dart';
-import 'package:tinder_app_ui/screens/choose_gender.dart';
-import 'package:tinder_app_ui/screens/choose_interests.dart';
-import 'package:tinder_app_ui/screens/enter_birthday.dart';
-import 'package:tinder_app_ui/screens/enter_name.dart';
-import 'package:tinder_app_ui/screens/enter_phone_number.dart';
-import 'package:tinder_app_ui/screens/oops_screen.dart';
-import 'package:tinder_app_ui/screens/otp_verification.dart';
-import 'package:tinder_app_ui/screens/splash_screen.dart';
+import 'package:tinder_app_ui/screens/after_signup_screens/root_page.dart';
+import 'package:tinder_app_ui/screens/before_signup_screens/add_photos.dart';
+import 'package:tinder_app_ui/screens/before_signup_screens/choose_gender.dart';
+import 'package:tinder_app_ui/screens/before_signup_screens/choose_interests.dart';
+import 'package:tinder_app_ui/screens/before_signup_screens/enter_birthday.dart';
+import 'package:tinder_app_ui/screens/before_signup_screens/enter_name.dart';
+import 'package:tinder_app_ui/screens/before_signup_screens/enter_phone_number.dart';
+import 'package:tinder_app_ui/screens/before_signup_screens/oops_screen.dart';
+import 'package:tinder_app_ui/screens/before_signup_screens/otp_verification.dart';
+import 'package:tinder_app_ui/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,6 +35,12 @@ class MyApp2 extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          MyScreen(
+              title: 'Home Screen',
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => RootPage()));
+              }),
           MyScreen(
               title: 'Splash Screen',
               onTap: () {

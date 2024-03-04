@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:tinder_app_ui/screens/welcome_to_tinder.dart';
+import 'package:tinder_app_ui/screens/before_signup_screens/follow_these_rules.dart';
 
-import '../components/my_app_bar.dart';
-import '../components/my_button.dart';
-import '../constants/app_bar_slider_value.dart';
-import '../constants/app_colors.dart';
-import '../constants/app_padding.dart';
-import '../constants/app_texts.dart';
+import '../../components/my_app_bar.dart';
+import '../../components/my_button.dart';
+import '../../constants/app_bar_slider_value.dart';
+import '../../constants/app_colors.dart';
+import '../../constants/app_padding.dart';
+import '../../constants/app_texts.dart';
 
 class Add_Photos extends StatefulWidget {
   const Add_Photos({super.key});
@@ -161,7 +161,7 @@ class _Add_PhotosState extends State<Add_Photos> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Welcome_To_Tinder()));
+                        builder: (context) => FollowTheseRules()));
               },
               widthInMediaQuery: 1,
             ),

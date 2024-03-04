@@ -3,10 +3,10 @@ import 'package:tinder_app_ui/components/my_button.dart';
 import 'package:tinder_app_ui/constants/app_bar_slider_value.dart';
 import 'package:tinder_app_ui/constants/app_colors.dart';
 import 'package:tinder_app_ui/constants/app_texts.dart';
-import 'package:tinder_app_ui/screens/choose_gender.dart';
+import 'package:tinder_app_ui/screens/before_signup_screens/choose_gender.dart';
 
-import '../components/my_app_bar.dart';
-import '../constants/app_padding.dart';
+import '../../components/my_app_bar.dart';
+import '../../constants/app_padding.dart';
 
 class Enter_Birthday extends StatelessWidget {
   const Enter_Birthday({super.key});
