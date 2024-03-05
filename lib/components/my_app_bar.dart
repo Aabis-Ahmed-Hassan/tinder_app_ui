@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   bool showLeading;
 
-  Icon? leadingIcon;
+  var leadingIcon;
   bool showTitle;
 
   bool centerTitle;
   Widget? title;
+  var bottomWidget;
   bool showActions;
   List<Widget>? actions;
   MyAppBar({
@@ -19,6 +20,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     required this.showActions,
     this.actions,
     this.centerTitle = true,
+    this.bottomWidget,
   });
 
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -38,6 +40,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: showTitle ? title : null,
       centerTitle: centerTitle,
       actions: showActions ? actions : null,
+      bottom: bottomWidget,
     );
   }
 }

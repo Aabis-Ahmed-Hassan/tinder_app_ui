@@ -305,7 +305,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ),
                                 child: const Icon(
-                                  Icons.electrical_services,
+                                  Icons.electric_bolt,
                                   color: Color(
                                     0xffCC53F0,
                                   ),

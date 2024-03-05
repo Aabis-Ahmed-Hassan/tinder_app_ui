@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tinder_app_ui/screens/after_signup_screens/bottom_nav_bar_screens/home_screen/home_screen.dart';
+import 'package:tinder_app_ui/screens/after_signup_screens/bottom_nav_bar_screens/profile/ProfileScreen.dart';
+
+import 'bottom_nav_bar_screens/explore_screen/explore_screen.dart';
+import 'bottom_nav_bar_screens/gold_home/GoldHome.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({super.key});
@@ -35,26 +39,14 @@ class _RootPageState extends State<RootPage> {
         index: currentPage,
         children: [
           HomeScreen(),
-          Container(
-            height: 50,
-            width: 50,
-            color: Colors.orange,
-          ),
-          Container(
-            height: 50,
-            width: 50,
-            color: Colors.purple,
-          ),
+          ExploreScreen(),
+          GoldHome(),
           Container(
             height: 50,
             width: 50,
             color: Colors.blue,
           ),
-          Container(
-            height: 50,
-            width: 50,
-            color: Colors.green,
-          ),
+ProfileScreen(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
