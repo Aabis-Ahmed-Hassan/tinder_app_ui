@@ -7,11 +7,14 @@ class MyButton extends StatelessWidget {
   bool showGradient;
   bool showBoxShadow;
   double widthInMediaQuery;
+  double heightInMediaQuery;
+
   MyButton(
       {super.key,
       required this.title,
       required this.onTap,
       this.widthInMediaQuery = 0.7,
+      this.heightInMediaQuery = 0.055,
       this.showGradient = true,
       this.showBoxShadow = true});
 
@@ -22,7 +25,7 @@ class MyButton extends StatelessWidget {
     return InkWell(
         onTap: onTap,
         child: Container(
-          height: height * 0.055,
+          height: height * heightInMediaQuery,
           width: width * widthInMediaQuery,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),

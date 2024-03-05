@@ -7,19 +7,19 @@ class LogoImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ShaderMask(
-      // blendMode: BlendMode.srcIn, // Optional blend mode
-      shaderCallback: (Rect bounds) {
-        return LinearGradient(
-          colors: [
-            AppColors.defaultColorRed,
-            AppColors.defaultColorOrange
-          ], // Gradient colors
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-        ).createShader(bounds);
-      },
-      child: AppIcon(),
-    );
+    // return ShaderMask(
+    //   // blendMode: BlendMode.srcIn, // Optional blend mode
+    //   shaderCallback: (Rect bounds) {
+    //     return LinearGradient(
+    //       colors: [
+    //         AppColors.defaultColorRed,
+    //         AppColors.defaultColorOrange
+    //       ], // Gradient colors
+    //       begin: Alignment.centerLeft,
+    //       end: Alignment.centerRight,
+    //     ).createShader(bounds);
+    //   },
+    //   child: AppIcon(),
+    return AppIcon();
   }
 }
