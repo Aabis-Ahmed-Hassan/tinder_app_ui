@@ -143,6 +143,8 @@ class _Enter_BirthdayState extends State<Enter_Birthday> {
               ),
               MyButton(
                 title: 'Continue',
+                showGradient: showPickedDate != 'Y Y Y Y / M M / D D',
+                showBoxShadow: showPickedDate != 'Y Y Y Y / M M / D D',
                 onTap: () {
                   if (showPickedDate != 'Y Y Y Y / M M / D D') {
                     Navigator.push(
@@ -152,7 +154,6 @@ class _Enter_BirthdayState extends State<Enter_Birthday> {
                   }
                 },
                 widthInMediaQuery: 1,
-                showGradient: showPickedDate != 'Y Y Y Y / M M / D D',
               ),
             ],
           ),

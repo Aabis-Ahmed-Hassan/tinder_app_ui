@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:tinder_app_ui/components/app_icon.dart';
-import 'package:tinder_app_ui/screens/after_signup_screens/root_page.dart';
+import 'package:tinder_app_ui/screens/after_login_screens/root_page.dart';
 
 import '../../components/my_app_bar.dart';
 import '../../components/my_button.dart';
 
 class Lets_Get_You_Ready extends StatelessWidget {
-  const Lets_Get_You_Ready({super.key});
+  Lets_Get_You_Ready({super.key});
+
+  List IconImage = [
+    'assets/icons/home_icon_colored.png',
+    'assets/icons/explore_icon.png',
+    'assets/icons/likes_screen_icon.png',
+    'assets/icons/message_icon.png',
+    'assets/icons/profile_icon.png',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -91,12 +99,7 @@ class Lets_Get_You_Ready extends StatelessWidget {
                       ),
                       MyButton(
                         title: 'Start Tutorial',
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => RootPage()));
-                        },
+                        onTap: () {},
                         showBoxShadow: false,
                       ),
                       SizedBox(
@@ -123,6 +126,51 @@ class Lets_Get_You_Ready extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+
+      //this bottomNavBar is different from root_page.dart screen
+      bottomNavigationBar: BottomAppBar(
+        child: Opacity(
+          opacity: 0.5,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image(
+                  height: height * 0.025,
+                  image: AssetImage(
+                    IconImage[0],
+                  ),
+                ),
+                Image(
+                  height: height * 0.025,
+                  image: AssetImage(
+                    IconImage[1],
+                  ),
+                ),
+                Image(
+                  height: height * 0.025,
+                  image: AssetImage(
+                    IconImage[2],
+                  ),
+                ),
+                Image(
+                  height: height * 0.025,
+                  image: AssetImage(
+                    IconImage[3],
+                  ),
+                ),
+                Image(
+                  height: height * 0.025,
+                  image: AssetImage(
+                    IconImage[4],
                   ),
                 ),
               ],

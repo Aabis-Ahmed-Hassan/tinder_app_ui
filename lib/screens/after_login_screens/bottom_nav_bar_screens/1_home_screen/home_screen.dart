@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:swipe_cards/swipe_cards.dart';
-import 'package:tinder_app_ui/screens/after_signup_screens/bottom_nav_bar_screens/home_screen/activity_screen.dart';
 
 import '../../../../components/app_icon.dart';
 import '../../../../components/my_app_bar.dart';
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/images_list.dart';
+import 'activity_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

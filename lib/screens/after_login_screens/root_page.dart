@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tinder_app_ui/screens/after_signup_screens/bottom_nav_bar_screens/home_screen/home_screen.dart';
-import 'package:tinder_app_ui/screens/after_signup_screens/bottom_nav_bar_screens/matches_screen/matches_screen.dart';
-import 'package:tinder_app_ui/screens/after_signup_screens/bottom_nav_bar_screens/profile/ProfileScreen.dart';
 
-import 'bottom_nav_bar_screens/explore_screen/explore_screen.dart';
-import 'bottom_nav_bar_screens/gold_home/GoldHome.dart';
+import 'bottom_nav_bar_screens/1_home_screen/home_screen.dart';
+import 'bottom_nav_bar_screens/2_explore_screen/explore_screen.dart';
+import 'bottom_nav_bar_screens/3_gold_home/GoldHome.dart';
+import 'bottom_nav_bar_screens/4_matches_screen/matches_screen.dart';
+import 'bottom_nav_bar_screens/5_profile_screen/ProfileScreen.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({super.key});

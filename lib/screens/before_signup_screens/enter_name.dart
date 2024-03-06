@@ -8,8 +8,15 @@ import 'package:tinder_app_ui/screens/before_signup_screens/enter_birthday.dart'
 import '../../components/my_app_bar.dart';
 import '../../constants/app_padding.dart';
 
-class Enter_Name extends StatelessWidget {
+class Enter_Name extends StatefulWidget {
   const Enter_Name({super.key});
+
+  @override
+  State<Enter_Name> createState() => _Enter_NameState();
+}
+
+class _Enter_NameState extends State<Enter_Name> {
+  final nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -97,18 +104,22 @@ class Enter_Name extends StatelessWidget {
                         ),
                       ),
                       child: TextFormField(
+                        controller: nameController,
                         style: TextStyle(
                           color: Color(0xff444142),
                           fontSize: 19.48,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w400,
                         ),
+                        onChanged: (value) {
+                          setState(() {});
+                        },
                         decoration: const InputDecoration(
                           contentPadding: EdgeInsets.zero,
                           border: OutlineInputBorder(
                             borderSide: BorderSide.none,
                           ),
-                          hintText: '000000000',
+                          hintText: 'John Doe',
                           hintStyle: TextStyle(
                             color: Color(0xff444142),
                             fontSize: 19.48,
@@ -139,11 +150,15 @@ class Enter_Name extends StatelessWidget {
               ),
               MyButton(
                 title: 'Continue',
+                showGradient: nameController.text.isNotEmpty,
+                showBoxShadow: nameController.text.isNotEmpty,
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Enter_Birthday()));
+                  if (nameController.text.isNotEmpty) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Enter_Birthday()));
+                  }
                 },
                 widthInMediaQuery: 1,
               ),

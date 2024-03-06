@@ -4,7 +4,7 @@ import 'package:tinder_app_ui/components/logo_image_widget.dart';
 import '../../components/my_app_bar.dart';
 import '../../components/my_button.dart';
 import '../../constants/app_padding.dart';
-import '../after_signup_screens/welcome_to_tinder.dart';
+import '../after_login_screens/welcome_to_tinder.dart';
 
 class FollowTheseRules extends StatelessWidget {
   const FollowTheseRules({super.key});
