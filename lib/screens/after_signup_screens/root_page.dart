@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tinder_app_ui/screens/after_signup_screens/bottom_nav_bar_screens/home_screen/home_screen.dart';
+import 'package:tinder_app_ui/screens/after_signup_screens/bottom_nav_bar_screens/matches_screen/matches_screen.dart';
 import 'package:tinder_app_ui/screens/after_signup_screens/bottom_nav_bar_screens/profile/ProfileScreen.dart';
 
 import 'bottom_nav_bar_screens/explore_screen/explore_screen.dart';
@@ -41,12 +42,8 @@ class _RootPageState extends State<RootPage> {
           HomeScreen(),
           ExploreScreen(),
           GoldHome(),
-          Container(
-            height: 50,
-            width: 50,
-            color: Colors.blue,
-          ),
-ProfileScreen(),
+          MatchesScreen(),
+          ProfileScreen(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(

@@ -8,8 +8,17 @@ import 'package:tinder_app_ui/screens/before_signup_screens/choose_gender.dart';
 import '../../components/my_app_bar.dart';
 import '../../constants/app_padding.dart';
 
-class Enter_Birthday extends StatelessWidget {
+class Enter_Birthday extends StatefulWidget {
   const Enter_Birthday({super.key});
+
+  @override
+  State<Enter_Birthday> createState() => _Enter_BirthdayState();
+}
+
+class _Enter_BirthdayState extends State<Enter_Birthday> {
+  String showPickedDate = 'Y Y Y Y / M M / D D';
+
+  DateTime currentDate = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -82,11 +91,34 @@ class Enter_Birthday extends StatelessWidget {
                     SizedBox(
                       height: height * 0.014,
                     ),
-                    Row(
-                      children: List.generate(
-                        1,
-                        (index) => Expanded(
-                          child: MyBirthdayDay(),
+                    InkWell(
+                      onTap: () async {
+                        final DateTime? pickedDate = await showDatePicker(
+                          context: context,
+                          initialDate: currentDate,
+                          firstDate: DateTime(1900),
+                          lastDate: currentDate,
+                        );
+                        if (pickedDate != null) {
+                          setState(
+                            () {
+                              showPickedDate =
+                                  '${pickedDate.year} / ${pickedDate.month} / ${pickedDate.day}';
+                            },
+                          );
+                        }
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(),
+                        child: Text(
+                          showPickedDate,
+                          style: TextStyle(
+                            color: Color(0xff444142),
+                            fontSize: 19.48,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                     ),
@@ -112,11 +144,15 @@ class Enter_Birthday extends StatelessWidget {
               MyButton(
                 title: 'Continue',
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Choose_Gender()));
+                  if (showPickedDate != 'Y Y Y Y / M M / D D') {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Choose_Gender()));
+                  }
                 },
                 widthInMediaQuery: 1,
-                showGradient: false,
+                showGradient: showPickedDate != 'Y Y Y Y / M M / D D',
               ),
             ],
           ),
