@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:tinder_app_ui/components/my_button.dart';
 import 'package:tinder_app_ui/constants/app_texts.dart';
-import 'package:tinder_app_ui/screens/before_signup_screens/enter_name.dart';
 
 import '../../components/my_app_bar.dart';
 import '../../constants/app_padding.dart';
+import 'enter_name.dart';
 
-class EnterPhoneNumber extends StatelessWidget {
+class EnterPhoneNumber extends StatefulWidget {
   const EnterPhoneNumber({super.key});
+
+  @override
+  State<EnterPhoneNumber> createState() => _EnterPhoneNumberState();
+}
+
+class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
+  final phoneController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +67,7 @@ class EnterPhoneNumber extends StatelessWidget {
                         ),
                       ),
                     ),
-                    child: const DropdownMenu(
+                    child: DropdownMenu(
                       trailingIcon: Icon(
                         Icons.arrow_drop_down,
                         color: Color(0xff444142),
@@ -97,6 +104,7 @@ class EnterPhoneNumber extends StatelessWidget {
                         ),
                       ),
                       child: TextFormField(
+                        controller: phoneController,
                         style: TextStyle(
                           color: Color(0xff444142),
                           fontSize: 19.48,
@@ -116,6 +124,9 @@ class EnterPhoneNumber extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
+                        onChanged: (value) {
+                          setState(() {});
+                        },
                       ),
                     ),
                   )
@@ -162,13 +173,17 @@ class EnterPhoneNumber extends StatelessWidget {
               ),
               MyButton(
                 title: 'Continue',
+                showGradient: phoneController.text.isNotEmpty,
+                showBoxShadow: phoneController.text.isNotEmpty,
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Enter_Name(),
-                    ),
-                  );
+                  if (phoneController.text.isNotEmpty) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Enter_Name(),
+                      ),
+                    );
+                  }
                 },
                 widthInMediaQuery: 1,
               ),

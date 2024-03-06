@@ -76,7 +76,7 @@ class _ChooseInterestsState extends State<ChooseInterests> {
                 activeColor: AppColors.defaultColorRed,
                 inactiveColor: Color(0xffD9D9D9),
                 thumbColor: Colors.transparent,
-                value: AppBarSliderValue.sliderValue * 3,
+                value: AppBarSliderValue.sliderValue * 4,
                 onChanged: (value) {},
               ),
             ),

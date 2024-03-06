@@ -36,7 +36,7 @@ class _Add_PhotosState extends State<Add_Photos> {
                 activeColor: AppColors.defaultColorRed,
                 inactiveColor: const Color(0xffD9D9D9),
                 thumbColor: Colors.transparent,
-                value: AppBarSliderValue.sliderValue * 4,
+                value: AppBarSliderValue.sliderValue * 5,
                 onChanged: (value) {},
               ),
             ),

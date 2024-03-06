@@ -41,6 +41,32 @@ class _Enter_NameState extends State<Enter_Name> {
                 onChanged: (value) {},
               ),
             ),
+            // Column(
+            //   children: [
+            //     SizedBox(
+            //       height: height * 0.0425,
+            //     ),
+            //     InkWell(
+            //       onTap: () {
+            //         Navigator.pop(
+            //             context,
+            //             MaterialPageRoute(
+            //                 builder: (context) => Enter_Birthday()));
+            //       },
+            //       child: Align(
+            //         alignment: Alignment.bottomLeft,
+            //         //Instead of choosing icon, I'm choosing image as the icon in figma is bold.
+            //
+            //         child: Image(
+            //           height: height * 0.0225,
+            //           image: AssetImage(
+            //             'assets/icons/close_icon.png',
+            //           ),
+            //         ),
+            //       ),
+            //     )
+            //   ],
+            // ),
             Column(
               children: [
                 SizedBox(
@@ -48,10 +74,7 @@ class _Enter_NameState extends State<Enter_Name> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pop(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Enter_Birthday()));
+                    Navigator.pop(context);
                   },
                   child: Align(
                     alignment: Alignment.bottomLeft,
@@ -60,11 +83,11 @@ class _Enter_NameState extends State<Enter_Name> {
                     child: Image(
                       height: height * 0.0225,
                       image: AssetImage(
-                        'assets/icons/close_icon.png',
+                        'assets/icons/go_back_icon.png',
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ],
